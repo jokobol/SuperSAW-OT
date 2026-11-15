@@ -1,0 +1,39 @@
+{
+  "version": "0.31.0-source-draft",
+  "status": "not-installable",
+  "coreRevision": "18c1296",
+  "sdkRevision": "b52d11e00a124a7e1ae35d23eff5b4d072ab961f",
+  "engine": {
+    "adapter.c": "38a0f650c9dc32d8cd2f61a91f0183980219eea3016c0b8692b7946cf559f16b",
+    "adapter.h": "e1d90ff69d85c7158b1af4c9dbc075bb6265fd7c0069eae4e5ef252f3bb77a14",
+    "ot_records.c": "22a94a3493ded2d315c85de4077af529ccc21d07e521f9c65f95898576aa4438",
+    "ot_records.h": "e789a5d9624e6d078996cd7a28d53724d2450d4f31a73ad81936e2539cd2aca7",
+    "machine.c": "55d6a94815d7efc86319236b54731e47cf4a8a9c0094ea050bb8e5689bfd5fac",
+    "machine.h": "9a30bca197c4fe6911ced5bc0547acf17911115f6afd8e3a5e4ae8a4283b5954",
+    "saw_fixed.h": "7ed3e61aec0f9b438e201079f2615286c5eaba037adf5033cb3e42ce75def4b0",
+    "tables.h": "72129f068ef8f33251d74c8611809d37331ce58f96a0bf9028be257f20c0d662",
+    "amp_tables.h": "aa097a2c74cf94b559c004122fafcd600de900371038d2c0290f2370ad590d40",
+    "pitch_fraction.h": "dc9d1f3c27f2ed227f002e16b240dfcbf3aa3fbcdae794b00945553ab89c31d0",
+    "test_render_equivalence.c": "dfe66cad6f74a115315b00afa91543aebc778bea80444d1026174564980e48d8",
+    "test_reference_render.c": "900913f808326e1259753fdd4cbdb6a02974a50b84b8180f566cf5289b719511"
+  },
+  "hardwareTested": false,
+  "usbLifecycleTested": false,
+  "cpuPercent": null,
+  "sdkFiles": {
+    "sdk_include/modwerk_events.h": "199371299eacb80d8757c88ee1d300274d0e8d943adf3a91972f82ef8ba5da22",
+    "sdk_include/modwerk_page.h": "19f02c99b474ea05c3e3741d4e323bc3139a2748b46aa1427af6ad2b0e2e448c",
+    "sdk_include/modwerk_sample_editor.h": "48c0aa9a2227cc59cc6a88fadc7712b48f3fd999b46d263f30975986ae66db12"
+  },
+  "blockers": [
+    "MIDI transport STOP/all-notes-off, other STOP gestures, Part/project switches and live record in the complete base",
+    "SW/1 absent-signature base proposal passes host tests but is not applied or reboot-qualified",
+    "Part switching, saved duplicate signatures, mute and scene integration on the new USB bridge",
+    "Exact installable public-base/package compatibility and physical USB lifecycle",
+    "Physical ColdFire/DSP load and headroom measurement"
+  ],
+  "sdkEventContractRevision": "b52d11e00a124a7e1ae35d23eff5b4d072ab961f",
+  "virtualUsbLoaderTested": true,
+  "virtualAssignmentTested": true,
+  "virtualDspManualStopTested": true
+}
