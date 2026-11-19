@@ -22,4 +22,8 @@ Finaliser l’intégration et la protection des projets, préparer un candidat i
 
 [Présentation anglaise et avancement détaillé](README.md) · [Sources et contrôles techniques](sources/V0.31/README.md)
 
+## Démo SuperSAW sur l’Octatrack
+
+[▶ Voir et écouter la démo](SuperSAW-OT-demo.mp4)
+
 Les crédits et licences d’origine sont conservés : voir [CREDITS.md](CREDITS.md).
