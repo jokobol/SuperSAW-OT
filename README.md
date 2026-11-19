@@ -6,6 +6,10 @@ Project by **José Aleixo — jokobol**, developed with AI coding assistance.
 
 [Présentation en français](README.fr.md) · [Technical source snapshot](sources/V0.31/README.md) · [Test evidence](sources/V0.31/TESTING.md)
 
+## SuperSAW on the Octatrack
+
+[▶ Watch and listen to the demo](SuperSAW-OT-demo.mp4)
+
 ## The idea
 
 Bring a wide, detuned saw sound to one Octatrack audio track, with six source controls:
