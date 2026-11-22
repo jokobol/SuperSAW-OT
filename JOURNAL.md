@@ -1,5 +1,36 @@
 # Development journal
+## 22 November 2026 — Further hardware tests on Modwerk 0.7.13
 
+SuperSAW-OT was tested again in private RAM trials on my Octatrack MKII, using Modwerk base 0.7.13 and the unchanged reference sound engine.
+
+Listening results:
+- SuperSAW on T1, with notes on steps 1, 4, 7, 9, 12 and 15.
+- Parameter locks on TUNE, DETN and WIDE.
+- Filter in FX1 and delay in FX2, including parameter locks.
+- Short FLEX samples on T2–T4: kick, hi-hat and clap.
+- No audible clicks or saturation reported during this session.
+
+The complete 600-reading journal reached 57.1% global CPU. The screenshot of requested readings showed up to 48.9%. These are whole-device readings, not an isolated SuperSAW benchmark or proof of an optimization.
+
+The original ten-minute exit attempted Undo before I had returned T1 to FLEX and ended with `needs-recovery`. A later check found the unit already in normal mode, with a known identity and zero modules.
+
+The host script now requests operator confirmation before timed Undo. Two consecutive short-mode hardware checks subsequently confirmed the previous identity and zero modules after STOP → T1 FLEX → AMP → Q.
+
+This confirms that manual-exit procedure in those two tests; the internal cause of the earlier refusal remains unresolved.
+
+Public packaging, isolated CPU cost, saved-project behaviour, Keep and physical reboot persistence remain to be qualified. A technical review dossier is being prepared for Modwerk. No installable public release yet.
+
+### Résumé français
+
+Nouvelle écoute positive sur la base Modwerk 0.7.13 : SuperSAW sur T1, séquence avec P-locks, filtre, delay et samples FLEX sur T2–T4, sans clic ni saturation signalés.
+
+Le journal complet atteint 57,1 % de CPU global. Ce chiffre ne mesure pas SuperSAW seul.
+
+Après un retrait temporisé non confirmé, le lanceur a été modifié pour attendre la confirmation de l’utilisateur. Deux contrôles courts consécutifs ont ensuite confirmé le retour à l’identité précédente et zéro module.
+
+Le moteur sonore reste inchangé. Le paquet public, les mesures propres au moteur, les sauvegardes et les redémarrages restent à qualifier avant publication.
+
+---
 ## 16 November 2026 — First hardware tests
 
 
