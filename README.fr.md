@@ -1,29 +1,72 @@
 # SuperSAW-OT
 
-**Une machine SuperSAW expérimentale pour une piste audio de l’Octatrack MKII, en cours d’intégration au runtime Modwerk.**
+**Une machine de synthèse monophonique expérimentale pour l’Octatrack MKII, testée en RAM sur une machine réelle et en préparation pour une revue technique Modwerk.**
 
-Projet porté par **José Aleixo — jokobol**, développé avec l’aide d’un assistant de programmation IA.
+Projet porté par **José Aleixo — jokobol**, développé avec une assistance IA au codage.
 
-L’idée : un son de dents de scie empilées et désaccordées, avec six commandes : **TUNE, DETN, MIX, OSC, WIDE et LEVL**, dont une à sept oscillations en dents de scie. L’objectif est d’utiliser une piste SuperSAW et de garder les sept autres pour les samples.
+SuperSAW-OT associe de un à sept oscillateurs à dents de scie, avec désaccordage et répartition stéréo. Une source destinée aux basses, aux leads et aux textures plus épaisses, en utilisant les possibilités de jeu de l’Octatrack.
 
-## Où nous en sommes
+## Les six paramètres SRC
 
-**V0.31 : sources de développement, aucun fichier prêt à installer.**
+| Paramètre | Fonction |
+|---|---|
+| TUNE | Hauteur du son |
+| DETN | Désaccordage entre les oscillateurs |
+| MIX | Équilibre entre oscillateur central et oscillateurs désaccordés |
+| OSC | Nombre d’oscillateurs, de 1 à 7 |
+| WIDE | Répartition stéréo |
+| LEVL | Niveau de sortie |
 
-Le moteur sonore et ses régressions sont testés. Le nouveau raccordement Modwerk passe **18 contrôles en émulation**, comprenant le chargement USB virtuel, Trial/Undo, l’affectation à une piste, les notes MIDI, leur relâchement, STOP, FUNC+STOP, le redémarrage et le retrait après retour à FLEX.
+La machine reste monophonique, avec une instance par Part. OSC modifie le nombre d’oscillateurs, pas le nombre de notes indépendantes. Le sub et les accords sont reportés pour privilégier la validation de cette version.
 
-Les essais réels sur Octatrack n’ont pas commencé. La charge CPU/DSP physique reste à mesurer. L’installation attend notamment la protection de la signature SW/1 lorsque le module manque et la validation de la combinaison exacte base/module, puis des changements de projet et de Part.
+## Essais sur Octatrack MKII
 
-Le dossier public contient une présentation, les sources et les résultats textuels. Il ne contient aucun OS Elektron, firmware modifié, module compilé ou fichier à flasher.
+Les essais privés sur la base Modwerk 0.7.13 ont confirmé le son sur T1, avec :
 
-## La suite
+- Séquençage et P-locks sur TUNE, DETN et WIDE.
+- Filtre en FX1 et delay en FX2, avec P-locks.
+- Samples FLEX courts sur T2, T3 et T4.
+- Aucun clic ni saturation signalés pendant cette écoute.
 
-Finaliser l’intégration et la protection des projets, préparer un candidat identifié, réaliser les essais sur une machine réelle, mesurer les ressources, puis demander la revue Modwerk pour une éventuelle première publication au catalogue.
+Les essais matériels antérieurs avaient également donné des retours positifs sur l’AMP, les LFO et STOP.
 
-[Présentation anglaise et avancement détaillé](README.md) · [Sources et contrôles techniques](sources/V0.31/README.md)
+Le journal complet de la session du 22 novembre comporte 600 mesures et un maximum de **57,1 % de CPU global**. Ces mesures concernent tout l’instrument dans ce projet : elles ne représentent pas le coût de SuperSAW seul.
 
-## Démo SuperSAW sur l’Octatrack
+## Fin des essais RAM
 
-[▶ Voir et écouter la démo](SuperSAW-OT-demo.mp4)
+Une tentative de retrait automatique à dix minutes a échoué avec `needs-recovery`. Une vérification ultérieure a trouvé la machine déjà en mode normal, avec une identité connue et zéro module.
 
-Les crédits et licences d’origine sont conservés : voir [CREDITS.md](CREDITS.md).
+Le script demande désormais une confirmation manuelle avant le retrait. **Deux contrôles courts consécutifs ont confirmé l’Undo, l’identité précédente restaurée et zéro module**, après STOP → T1 sur FLEX → AMP → Q.
+
+La cause interne du refus précédent reste à établir.
+
+## État du projet
+
+**Prototype fonctionnel en cours de qualification. Aucun module prêt à installer n’est distribué dans ce dépôt.**
+
+Les sources publiques dans `sources/V0.31` constituent un instantané historique. Le dossier de travail actuel et ses derniers rapports ne sont pas encore intégralement publiés ici.
+
+Restent notamment :
+
+- L’intégration du paquet dans la chaîne publique Modwerk.
+- La mesure du coût propre au moteur.
+- La protection des projets lorsque la machine SuperSAW est absente.
+- La qualification des sauvegardes, du Keep et des redémarrages physiques.
+- Les contrôles et la revue nécessaires avant une éventuelle publication.
+
+Le moteur sonore de référence reste inchangé pendant ces derniers essais.
+
+## Démo
+
+[▶ Voir et écouter la démo SuperSAW](SuperSAW-OT-demo.mp4)
+
+Cette vidéo illustre une étape antérieure du prototype.
+
+## Suivi et crédits
+
+- [Journal des essais](JOURNAL.md)
+- [Présentation anglaise](README.md)
+- [Instantané historique des sources V0.31](sources/V0.31/README.md)
+- [Crédits et licences](CREDITS.md)
+
+Les crédits et licences des composants utilisés sont conservés. Aucun OS Elektron, firmware modifié ou fichier à flasher n’est distribué ici.
